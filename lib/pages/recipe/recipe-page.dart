@@ -3,9 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:recipe/services/theme/theme.dart';
 import 'package:recipe/theme/themed-page.dart';
 
-class RecipeViewPage extends StatelessWidget {
+class RecipePage extends StatelessWidget {
   final Map recipe = {
-    'title': 'Curry',
+    'title': 'Vegan Curry',
     'short-description': 'A lovely vegan curry',
     'cook-times': {
       'prep': 20,
@@ -13,6 +13,8 @@ class RecipeViewPage extends StatelessWidget {
     },
     'ingredients': [
       {'name': 'Sugar', 'quantity': '1', 'measurement': 'tsp'},
+      {'name': 'Plain flour', 'quantity': '150', 'measurement': 'g'},
+      {'name': 'salt', 'quantity': '1/4', 'measurement': 'tsp'},
     ],
     'steps': [
       'Pre-heat the oven',
@@ -22,86 +24,101 @@ class RecipeViewPage extends StatelessWidget {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula tellus vel eleifend lacinia. Nunc vestibulum eu elit ac fringilla. Praesent ut ornare purus, nec porta nunc. Donec malesuada lacinia orci, non fringilla elit cursus sed. Maecenas sit amet tincidunt elit. Integer commodo est at lacus facilisis aliquam. Etiam in enim at massa imperdiet eleifend ac eu quam.',
     ]
   };
-  Widget _header(context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: 350.0,
-          child: Image.asset(
-            'assets/images/curry.jpg',
-            fit: BoxFit.cover,
-          ),
+
+  @override
+  Widget build(BuildContext context) => ThemedPage(
+        brightness: Provider.of<ThemeService>(context).getBrightness(),
+        scaffoldBuilder: (Widget body) => Scaffold(
+          extendBodyBehindAppBar: true,
+          body: body,
         ),
-        Positioned(
-          bottom: 0.0,
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            child: Card(
-              elevation: 10,
-              margin: const EdgeInsets.all(8.0),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0),
+        body: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: <Widget>[
+            SliverAppBar(
+              pinned: false,
+              stretch: true,
+              elevation: 0.0,
+              actions: <Widget>[
+                IconButton(
+                  icon: const Icon(
+                    Icons.more_vert,
+                  ),
+                  tooltip: 'Add new entry',
+                  onPressed: () {/* ... */},
+                ),
+              ],
+              backgroundColor: Colors.transparent,
+              iconTheme: IconThemeData(
+                color: Colors.white,
               ),
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                      child: Text(
-                        recipe['title'],
+              expandedHeight: 250.0,
+              flexibleSpace: FlexibleSpaceBar(
+                stretchModes: <StretchMode>[
+                  StretchMode.zoomBackground,
+                  StretchMode.blurBackground,
+                  StretchMode.fadeTitle,
+                ],
+                title: Text(
+                  '${recipe['title'].toString()}',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                background: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.asset(
+                      'assets/images/curry.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                    const DecoratedBox(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment(0.0, 0.5),
+                          end: Alignment(0.0, 0.0),
+                          colors: <Color>[
+                            Color(0x60000000),
+                            Color(0x00000000),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 8.0,
-                      bottom: 8.0,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            Text(
-                              'Prep Time: ',
-                            ),
-                            Text(
-                              '${recipe['cook-times']['prep'].toString()}',
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: <Widget>[
-                            Text(
-                              'Cook Time: ',
-                            ),
-                            Text(
-                              '${recipe['cook-times']['cook'].toString()}',
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: <Widget>[
-                            Text(
-                              'Total Time: ',
-                            ),
-                            Text(
-                              '${(recipe['cook-times']['prep'] + recipe['cook-times']['cook']).toString()}',
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
+            SliverList(
+              delegate: SliverChildListDelegate([
+                Card(
+                  elevation: 2.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  margin: const EdgeInsets.all(
+                    8.0,
+                  ),
+                  child: Column(
+                    children: ingredients(recipe['ingredients']),
+                  ),
+                ),
+                Card(
+                  elevation: 2.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  margin: const EdgeInsets.all(
+                    8.0,
+                  ),
+                  child: Column(
+                    children: method(recipe['steps']),
+                  ),
+                ),
+              ]),
+            ),
+          ],
         ),
-      ],
-    );
-  }
+      );
 
   List<Widget> method(List strings) {
     List<Widget> list = new List<Widget>();
@@ -113,18 +130,23 @@ class RecipeViewPage extends StatelessWidget {
     for (var i = 0; i < strings.length; i++) {
       list.add(
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 12.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text('${(i + 1).toString()}.'),
               SizedBox(
-                width: 15.0,
+                width: 12.0,
               ),
               Expanded(child: Text(strings[i]))
             ],
           ),
+        ),
+      );
+      list.add(
+        SizedBox(
+          height: 12.0,
         ),
       );
     }
@@ -141,15 +163,19 @@ class RecipeViewPage extends StatelessWidget {
     for (var i = 0; i < strings.length; i++) {
       list.add(
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                  '${strings[i]['quantity'].toString()} ${strings[i]['measurement'].toString()}'),
+                  '${strings[i]['quantity'].toString()}${strings[i]['measurement'].toString()}'),
               SizedBox(
-                width: 15.0,
+                width: 8.0,
+              ),
+              Text('-'),
+              SizedBox(
+                width: 8.0,
               ),
               Expanded(
                 child: Text('${strings[i]['name'].toString()}'),
@@ -159,6 +185,9 @@ class RecipeViewPage extends StatelessWidget {
         ),
       );
     }
+    list.add(SizedBox(
+      height: 10.0,
+    ));
     return list;
   }
 
@@ -192,63 +221,6 @@ class RecipeViewPage extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return ThemedPage(
-      brightness: Provider.of<ThemeService>(context).getBrightness(),
-      scaffoldBuilder: (Widget body) => Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: Colors.transparent,
-          iconTheme: IconThemeData(
-            color: Colors.white,
-          ),
-        ),
-        body: body,
-      ),
-      body: CustomScrollView(
-        slivers: <Widget>[
-          const SliverAppBar(
-            title: const Text('Sliver App Bar'),
-          ),
-          buildContent(context),
-        ],
-      ),
-    );
-  }
-
-  Widget buildContent(BuildContext context) {
-    return SingleChildScrollView(
-      child: Center(
-        child: Column(
-          children: <Widget>[
-            // header
-            _header(context),
-            SizedBox(
-              height: 10.0,
-            ),
-            _body(context),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Bullet extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Container(
-      height: 5.0,
-      width: 5.0,
-      decoration: new BoxDecoration(
-        color: Colors.black,
-        shape: BoxShape.circle,
       ),
     );
   }
