@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:recipe/pages/login/login.dart';
 import 'package:recipe/pages/recipe/recipe-page.dart';
 import 'package:recipe/services/theme/theme.dart';
 import 'package:recipe/theme/themed-page.dart';
 
 class Dashboard extends StatelessWidget {
+  static String tag = '/';
+
   @override
   Widget build(BuildContext context) => ThemedPage(
         brightness: Provider.of<ThemeService>(context).getBrightness(),
@@ -20,7 +23,11 @@ class Dashboard extends StatelessWidget {
             child: ListView(
               children: <Widget>[
                 ListTile(
-                  title: Text('Add'),
+                  title: Text('Sign in'),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pushNamed(LoginPage.tag);
+                  },
                 )
               ],
             ),

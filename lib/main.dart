@@ -41,7 +41,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ThemedApp(
       title: 'My Recipes',
-      body: Dashboard(),
     );
   }
 }

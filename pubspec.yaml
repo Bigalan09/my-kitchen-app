@@ -27,6 +27,7 @@ flutter:
 
   assets:
     - assets/images/curry.jpg
+    - assets/images/logo.svg
 
   # fonts:
   #   - family: Schyler
