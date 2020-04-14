@@ -15,7 +15,8 @@ class ThemedApp extends StatelessWidget {
       darkTheme: ThemeManager.brightness(Brightness.dark).materialTheme,
       initialRoute: '/',
       routes: {
-        '/': (context) => Dashboard(),
+        '/': (context) => LoginPage(),
+        '/dashboard': (context) => Dashboard(),
         '/login': (context) => LoginPage(),
       },
     );

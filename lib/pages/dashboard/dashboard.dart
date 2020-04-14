@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe/pages/login/login.dart';
 import 'package:recipe/pages/recipe/recipe-page.dart';
+import 'package:recipe/pages/side-navigation/side-navigation.dart';
 import 'package:recipe/services/theme/theme.dart';
 import 'package:recipe/theme/themed-page.dart';
 
 class Dashboard extends StatelessWidget {
-  static String tag = '/';
+  static String tag = '/dashboard';
 
   @override
   Widget build(BuildContext context) => ThemedPage(
@@ -19,19 +20,7 @@ class Dashboard extends StatelessWidget {
               'My Recipes',
             ),
           ),
-          drawer: Drawer(
-            child: ListView(
-              children: <Widget>[
-                ListTile(
-                  title: Text('Sign in'),
-                  onTap: () {
-                    Navigator.of(context).pop();
-                    Navigator.of(context).pushNamed(LoginPage.tag);
-                  },
-                )
-              ],
-            ),
-          ),
+          drawer: SideNavigation(),
           body: body,
         ),
         body: SafeArea(

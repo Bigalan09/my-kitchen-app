@@ -54,7 +54,10 @@ class _LoginPageState extends State<LoginPage> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(Dashboard.tag);
+          Navigator.of(context).pushNamedAndRemoveUntil(
+            Dashboard.tag,
+            (Route<dynamic> route) => false,
+          );
         },
         padding: EdgeInsets.all(12),
         color: Colors.lightBlueAccent,
@@ -68,6 +71,24 @@ class _LoginPageState extends State<LoginPage> {
         style: TextStyle(color: Colors.black54),
       ),
       onPressed: () {},
+    );
+
+    final skipButton = Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        onPressed: () {
+          Navigator.of(context).pushNamedAndRemoveUntil(
+            Dashboard.tag,
+            (Route<dynamic> route) => false,
+          );
+        },
+        padding: EdgeInsets.all(12),
+        color: Colors.lightBlueAccent,
+        child: Text('Continue as Guest', style: TextStyle(color: Colors.white)),
+      ),
     );
 
     return ThemedPage(
@@ -88,7 +109,9 @@ class _LoginPageState extends State<LoginPage> {
             password,
             SizedBox(height: 24.0),
             loginButton,
-            forgotLabel
+            forgotLabel,
+            SizedBox(height: 96.0),
+            skipButton,
           ],
         ),
       ),
