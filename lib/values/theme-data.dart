@@ -6,7 +6,7 @@ final CustomTheme themeLight = CustomTheme(
   Brightness.light,
   const Palette(
     primary: Color(0xffffbb22),
-    secondary: Color(0xffdd9922),
+    secondary: Color(0xffFFC43B),
     background: Color(0xfff3f5f9),
     foreground: Color(0xffffffff),
     textPrimary: Color(0xff242326),
