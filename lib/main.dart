@@ -1,5 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:my_kitchen/pages/dashboard/dashboard.dart';
+import 'package:my_kitchen/pages/login/login.dart';
+import 'package:my_kitchen/pages/shopping-list/my-shopping-list.dart';
+import 'package:my_kitchen/pages/shopping-list/shopping-lists.dart';
+import 'package:my_kitchen/splashscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:my_kitchen/services/auth/auth.dart';
 import 'package:my_kitchen/services/theme/theme.dart';
@@ -33,12 +39,6 @@ void main() {
       );
     });
   });
-  SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      systemNavigationBarColor:
-          SystemUiOverlayStyle.dark.systemNavigationBarColor,
-    ),
-  );
   // SystemChrome.setEnabledSystemUIOverlays([]);
 }
 
@@ -47,6 +47,32 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ThemedApp(
       title: 'My Recipes',
+      routes: {
+        '/': (context) => SplashScreen(
+              nextPage: FutureBuilder<FirebaseUser>(
+                future: Provider.of<AuthService>(context).getUser(),
+                builder: (context, AsyncSnapshot<FirebaseUser> snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    if (snapshot.error != null) {
+                      print("error");
+                      return Text(snapshot.error.toString());
+                    }
+                    return snapshot.hasData ? Dashboard() : LoginPage();
+                  }
+                  return Center(
+                    child: Container(
+                      child: CircularProgressIndicator(),
+                      alignment: Alignment(0.0, 0.0),
+                    ),
+                  );
+                },
+              ),
+            ),
+        '/shopping-lists': (context) => ShoppingListsPage(),
+        '/my-shopping-list': (context) => MyShoppingList(),
+        '/dashboard': (context) => Dashboard(),
+        '/login': (context) => LoginPage(),
+      },
     );
   }
 }
