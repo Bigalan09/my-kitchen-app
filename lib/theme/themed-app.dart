@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_kitchen/pages/dashboard/dashboard.dart';
 import 'package:my_kitchen/pages/login/login.dart';
+import 'package:my_kitchen/splashscreen.dart';
 import 'package:my_kitchen/theme/theme-manager.dart';
 
 class ThemedApp extends StatelessWidget {
@@ -15,7 +16,9 @@ class ThemedApp extends StatelessWidget {
       darkTheme: ThemeManager.brightness(Brightness.dark).materialTheme,
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(),
+        '/': (context) => SplashScreen(
+              nextPage: LoginPage(),
+            ),
         '/dashboard': (context) => Dashboard(),
         '/login': (context) => LoginPage(),
       },

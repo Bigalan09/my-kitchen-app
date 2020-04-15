@@ -21,12 +21,11 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(
         seconds: 1,
       ),
-      () => Navigator.pushReplacement(
-        context,
+      () => Navigator.of(context).pushReplacement(
         PageFadeTransition(
           child: nextPage,
           duration: const Duration(
-            seconds: 1,
+            milliseconds: 750,
           ),
         ),
       ),
@@ -39,13 +38,18 @@ class _SplashScreenState extends State<SplashScreen> {
     return Stack(
       children: <Widget>[
         Positioned.fill(
+          child: Container(
+            color: Theme.of(context).accentColor,
+          ),
+        ),
+        Positioned.fill(
           child: Center(
             child: Hero(
               tag: 'logo',
-              child: SvgPicture.asset(
-                'assets/images/logo.svg',
-                height: 250,
-                width: 250,
+              child: Image.asset(
+                'assets/images/logo.png',
+                height: 200,
+                width: 200,
               ),
             ),
           ),
