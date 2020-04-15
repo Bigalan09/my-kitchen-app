@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:my_kitchen/utils/fadein.dart';
 import 'package:provider/provider.dart';
 import 'package:my_kitchen/pages/dashboard/dashboard.dart';
 import 'package:my_kitchen/services/auth/auth.dart';
@@ -69,27 +70,33 @@ class _LoginPageState extends State<LoginPage> {
               onRecoverPassword: _recoverPassword,
             ),
             Positioned(
-              width: MediaQuery.of(context).size.width / 2,
-              bottom: 48.0,
-              left: MediaQuery.of(context).size.width / 4,
-              child: new OutlineButton(
-                textColor: Colors.white,
-                child: Text(
-                  'Continue as Guest',
-                ),
-                onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    Dashboard.tag,
-                    (Route<dynamic> route) => false,
-                  );
-                },
-                borderSide: BorderSide(
-                  color: Colors.white,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                    30.0,
+              bottom: 50,
+              width: MediaQuery.of(context).size.width,
+              child: Center(
+                child: FadeIn(
+                  delay: 3,
+                  child: new OutlineButton(
+                    textColor: Colors.white,
+                    padding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                    child: Text(
+                      'Continue as Guest',
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        Dashboard.tag,
+                        (Route<dynamic> route) => false,
+                      );
+                    },
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        30.0,
+                      ),
+                    ),
                   ),
                 ),
               ),
