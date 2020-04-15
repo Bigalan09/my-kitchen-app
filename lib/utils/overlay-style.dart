@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:recipe/theme/theme-manager.dart';
+import 'package:my_kitchen/theme/theme-manager.dart';
 
 class OverlayStyle {
   /// Gets the UI style for for the given brightness or theme brightness.

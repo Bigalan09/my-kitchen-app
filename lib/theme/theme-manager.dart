@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/theme/custom-theme.dart';
-import 'package:recipe/values/theme-data.dart';
+import 'package:my_kitchen/theme/custom-theme.dart';
+import 'package:my_kitchen/values/theme-data.dart';
 
 /// Custom theme manager for universal light and dark colors
 class ThemeManager {

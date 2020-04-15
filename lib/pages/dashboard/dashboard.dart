@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:recipe/pages/recipe/recipe-page.dart';
-import 'package:recipe/pages/side-navigation/side-navigation.dart';
-import 'package:recipe/services/theme/theme.dart';
-import 'package:recipe/theme/themed-page.dart';
+import 'package:my_kitchen/pages/side-navigation/side-navigation.dart';
+import 'package:my_kitchen/services/theme/theme.dart';
+import 'package:my_kitchen/theme/themed-page.dart';
+import 'package:my_kitchen/pages/recipe/recipe-page.dart';
 
 class Dashboard extends StatelessWidget {
   static String tag = '/dashboard';

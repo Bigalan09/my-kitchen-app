@@ -2,10 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:provider/provider.dart';
-import 'package:recipe/pages/dashboard/dashboard.dart';
-import 'package:recipe/services/auth/auth.dart';
-import 'package:recipe/services/theme/theme.dart';
-import 'package:recipe/theme/themed-page.dart';
+import 'package:my_kitchen/pages/dashboard/dashboard.dart';
+import 'package:my_kitchen/services/auth/auth.dart';
+import 'package:my_kitchen/services/theme/theme.dart';
+import 'package:my_kitchen/theme/themed-page.dart';
 
 class LoginPage extends StatefulWidget {
   static String tag = '/login';

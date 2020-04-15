@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/pages/dashboard/dashboard.dart';
-import 'package:recipe/pages/login/login.dart';
-import 'package:recipe/theme/theme-manager.dart';
+import 'package:my_kitchen/pages/dashboard/dashboard.dart';
+import 'package:my_kitchen/pages/login/login.dart';
+import 'package:my_kitchen/theme/theme-manager.dart';
 
 class ThemedApp extends StatelessWidget {
   final String title;

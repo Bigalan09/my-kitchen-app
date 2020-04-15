@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:recipe/theme/theme-manager.dart';
-import 'package:recipe/utils/back-override.dart';
-import 'package:recipe/utils/overlay-style.dart';
+import 'package:my_kitchen/theme/theme-manager.dart';
+import 'package:my_kitchen/utils/back-override.dart';
+import 'package:my_kitchen/utils/overlay-style.dart';
 
 class ThemedPage extends StatelessWidget {
   const ThemedPage({

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:recipe/services/auth/auth.dart';
-import 'package:recipe/services/theme/theme.dart';
-import 'package:recipe/theme/themed-app.dart';
+import 'package:my_kitchen/services/auth/auth.dart';
+import 'package:my_kitchen/services/theme/theme.dart';
+import 'package:my_kitchen/theme/themed-app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {

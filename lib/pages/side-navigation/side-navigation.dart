@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/pages/login/login.dart';
+import 'package:my_kitchen/pages/login/login.dart';
 
 class SideNavigation extends StatefulWidget {
   @override

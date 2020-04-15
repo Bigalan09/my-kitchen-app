@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/theme/palette.dart';
+import 'package:my_kitchen/theme/palette.dart';
 
 class CustomTheme {
   CustomTheme(Brightness brightness, this.palette) {

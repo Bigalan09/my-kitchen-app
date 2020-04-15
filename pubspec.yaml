@@ -1,5 +1,5 @@
-name: recipe
-description: A recipe app.
+name: my_kitchen
+description: My Kitchen App - Find and make recipes with ingredient you already have at home, create shopping lists and manage your inventory of ingredients. Your kitchen in one place, anywhere, any time.
 version: 1.0.0+1
 
 environment:
@@ -22,6 +22,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
 
 flutter:
   uses-material-design: true
