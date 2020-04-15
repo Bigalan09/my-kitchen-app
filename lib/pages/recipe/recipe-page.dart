@@ -190,38 +190,4 @@ class RecipePage extends StatelessWidget {
     ));
     return list;
   }
-
-  Widget _body(context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      child: Column(
-        children: <Widget>[
-          Card(
-            elevation: 2.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            margin: const EdgeInsets.all(
-              8.0,
-            ),
-            child: Column(
-              children: ingredients(recipe['ingredients']),
-            ),
-          ),
-          Card(
-            elevation: 2.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            margin: const EdgeInsets.all(
-              8.0,
-            ),
-            child: Column(
-              children: method(recipe['steps']),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }

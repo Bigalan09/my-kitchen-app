@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:recipe/pages/dashboard/dashboard.dart';
 import 'package:recipe/services/auth/auth.dart';
 import 'package:recipe/services/theme/theme.dart';
 import 'package:recipe/theme/themed-app.dart';
@@ -33,6 +32,12 @@ void main() {
       );
     });
   });
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      systemNavigationBarColor:
+          SystemUiOverlayStyle.dark.systemNavigationBarColor,
+    ),
+  );
   // SystemChrome.setEnabledSystemUIOverlays([]);
 }
 

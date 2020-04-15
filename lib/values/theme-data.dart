@@ -5,8 +5,8 @@ import 'package:recipe/theme/palette.dart';
 final CustomTheme themeLight = CustomTheme(
   Brightness.light,
   const Palette(
-    primary: Color(0xffF2B705),
-    secondary: Color(0xffF2A20C),
+    primary: Color(0xffffbb22),
+    secondary: Color(0xffdd9922),
     background: Color(0xfff3f5f9),
     foreground: Color(0xffffffff),
     textPrimary: Color(0xff242326),

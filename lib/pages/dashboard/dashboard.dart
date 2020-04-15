@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:recipe/pages/login/login.dart';
 import 'package:recipe/pages/recipe/recipe-page.dart';
 import 'package:recipe/pages/side-navigation/side-navigation.dart';
 import 'package:recipe/services/theme/theme.dart';
