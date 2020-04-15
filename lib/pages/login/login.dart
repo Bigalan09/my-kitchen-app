@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
               width: MediaQuery.of(context).size.width,
               child: Center(
                 child: FadeIn(
-                  delay: 3,
+                  delay: 3.5,
                   child: new OutlineButton(
                     textColor: Colors.white,
                     padding:
