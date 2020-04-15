@@ -50,6 +50,7 @@ class _LoginPageState extends State<LoginPage> {
         brightness: Provider.of<ThemeService>(context).getBrightness(),
         scaffoldBuilder: (Widget body) => Scaffold(
               extendBodyBehindAppBar: true,
+              resizeToAvoidBottomInset: false,
               body: body,
             ),
         body: Stack(
