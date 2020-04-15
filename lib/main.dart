@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:my_kitchen/splashscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:my_kitchen/services/auth/auth.dart';
 import 'package:my_kitchen/services/theme/theme.dart';

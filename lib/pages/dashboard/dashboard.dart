@@ -15,9 +15,6 @@ class Dashboard extends StatelessWidget {
           extendBodyBehindAppBar: true,
           appBar: AppBar(
             elevation: 0.0,
-            title: Text(
-              'My Recipes',
-            ),
           ),
           drawer: SideNavigation(),
           body: body,
