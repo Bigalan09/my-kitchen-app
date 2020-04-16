@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_kitchen/pages/dashboard/dashboard.dart';
 import 'package:my_kitchen/pages/login/login.dart';
+import 'package:my_kitchen/pages/recipe/recipe-page.dart';
 import 'package:my_kitchen/pages/shopping-list/my-shopping-list.dart';
 import 'package:my_kitchen/pages/shopping-list/shopping-lists.dart';
 import 'package:my_kitchen/splashscreen.dart';
@@ -68,10 +69,11 @@ class MyApp extends StatelessWidget {
                 },
               ),
             ),
-        '/shopping-lists': (context) => ShoppingListsPage(),
-        '/my-shopping-list': (context) => MyShoppingList(),
-        '/dashboard': (context) => Dashboard(),
-        '/login': (context) => LoginPage(),
+        ShoppingListsPage.tag: (context) => ShoppingListsPage(),
+        MyShoppingList.tag: (context) => MyShoppingList(),
+        Dashboard.tag: (context) => Dashboard(),
+        RecipePage.tag: (context) => RecipePage(),
+        LoginPage.tag: (context) => LoginPage(),
       },
     );
   }
