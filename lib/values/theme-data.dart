@@ -5,7 +5,7 @@ import 'package:my_kitchen/theme/palette.dart';
 final CustomTheme themeLight = CustomTheme(
   Brightness.light,
   const Palette(
-    primary: Color(0xffffbb22),
+    primary: Color(0xffE52739),
     secondary: Color(0xffFFC43B),
     background: Color(0xfff3f5f9),
     foreground: Color(0xffffffff),
@@ -23,7 +23,7 @@ final CustomTheme themeLight = CustomTheme(
 final CustomTheme themeDark = CustomTheme(
   Brightness.dark,
   const Palette(
-    primary: Color(0xffffbb22),
+    primary: Color(0xffE52739),
     secondary: Color(0xffFFC43B),
     background: Color(0xfff3f5f9),
     foreground: Color(0xffffffff),

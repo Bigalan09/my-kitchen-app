@@ -83,6 +83,7 @@ class _SideNavigationState extends State<SideNavigation> {
         }
         return Drawer(
           child: ListView(
+            padding: const EdgeInsets.all(0.0),
             children: children,
           ),
         );

@@ -27,7 +27,7 @@ class _MyShoppingListState extends State<MyShoppingList> {
         extendBodyBehindAppBar: true,
         body: body,
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.white70,
+          backgroundColor: Color(0x0ff467F71),
           onPressed: () {
             showDialog(
               context: context,
@@ -38,7 +38,10 @@ class _MyShoppingListState extends State<MyShoppingList> {
                   buttonText: 'Okay'),
             );
           },
-          child: Icon(Icons.add),
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
         ),
       ),
       body: CustomScrollView(
@@ -47,7 +50,7 @@ class _MyShoppingListState extends State<MyShoppingList> {
           SliverAppBar(
             title: Text(
                 '${args.containsKey('title') ? '${args['title']} - ' : ''}Shopping list'),
-            backgroundColor: Colors.deepOrange[400],
+            backgroundColor: Color(0xffE52739),
           ),
           SliverList(
             delegate: SliverChildListDelegate([

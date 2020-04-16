@@ -24,7 +24,7 @@ class _ShoppingListsPageState extends State<ShoppingListsPage> {
           slivers: <Widget>[
             SliverAppBar(
               title: Text('Shopping Lists'),
-              backgroundColor: Colors.deepOrange[400],
+              backgroundColor: Color(0xffE52739),
             ),
             SliverList(
               delegate: SliverChildListDelegate([

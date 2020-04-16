@@ -88,7 +88,7 @@ class _ShoppingListDialogState extends State<ShoppingListDialog> {
           left: widget._padding,
           right: widget._padding,
           child: CircleAvatar(
-            backgroundColor: Colors.blueAccent,
+            backgroundColor: Color(0xff93B56C),
             radius: widget._avatarRadius,
           ),
         ),
