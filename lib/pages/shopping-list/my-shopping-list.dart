@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:my_kitchen/pages/shopping-list/list-item.dart';
+import 'package:my_kitchen/pages/shopping-list/shopping-list-dialog.dart';
 import 'package:my_kitchen/services/theme/theme.dart';
 import 'package:my_kitchen/theme/themed-page.dart';
 import 'package:provider/provider.dart';
 
 class MyShoppingList extends StatefulWidget {
   static String tag = '/my-shopping-list';
-  
+
   MyShoppingList();
 
   @override
@@ -25,12 +26,27 @@ class _MyShoppingListState extends State<MyShoppingList> {
       scaffoldBuilder: (Widget body) => Scaffold(
         extendBodyBehindAppBar: true,
         body: body,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.white70,
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) => ShoppingListDialog(
+                  title: 'Success',
+                  description:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                  buttonText: 'Okay'),
+            );
+          },
+          child: Icon(Icons.add),
+        ),
       ),
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverAppBar(
-            title: Text('${args.containsKey('title') ? '${args['title']} - ' : ''}Shopping list'),
+            title: Text(
+                '${args.containsKey('title') ? '${args['title']} - ' : ''}Shopping list'),
             backgroundColor: Colors.deepOrange[400],
           ),
           SliverList(
