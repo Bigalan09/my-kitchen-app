@@ -7,16 +7,16 @@ class RecipePage extends StatelessWidget {
   static String tag = '/recipe';
 
   final Map recipe = {
-    'title': 'Vegan Curry',
-    'short-description': 'A lovely vegan curry',
+    'title': 'A Chickpea Curry',
+    'short-description': 'A mild vegaterian chickpea curry.',
     'cook-times': {
       'prep': 20,
       'cook': 35,
     },
     'ingredients': [
       {'name': 'Sugar', 'quantity': '1', 'measurement': 'tsp'},
-      {'name': 'Plain flour', 'quantity': '150', 'measurement': 'g'},
-      {'name': 'salt', 'quantity': '1/4', 'measurement': 'tsp'},
+      {'name': 'Chickpea', 'quantity': '150', 'measurement': 'g'},
+      {'name': 'Salt', 'quantity': '1/4', 'measurement': 'tsp'},
     ],
     'steps': [
       'Pre-heat the oven',

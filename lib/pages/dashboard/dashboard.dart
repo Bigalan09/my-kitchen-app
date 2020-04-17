@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_kitchen/models/recipe.dart';
 import 'package:my_kitchen/pages/recipe/recipe-page.dart';
 import 'package:my_kitchen/utils/star-rating.dart';
 import 'package:provider/provider.dart';
@@ -59,7 +58,7 @@ class Dashboard extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 16.0),
                       child: Text(
-                        'city',
+                        'A mild vegaterian chickpea curry.',
                         style: TextStyle().copyWith(color: Colors.black45),
                       ),
                     ),

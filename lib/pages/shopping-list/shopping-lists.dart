@@ -37,6 +37,24 @@ class _ShoppingListsPageState extends State<ShoppingListsPage> {
                         arguments: {'title': 'Week 1'});
                   },
                 ),
+                ListTile(
+                  title: Text('Week 2'),
+                  subtitle: Text('My awesome shopping list'),
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(MyShoppingList.tag,
+                        arguments: {'title': 'Week 2'});
+                  },
+                ),
+                ListTile(
+                  title: Text('Week 3'),
+                  subtitle: Text('My awesome shopping list'),
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(MyShoppingList.tag,
+                        arguments: {'title': 'Week 3'});
+                  },
+                ),
               ]),
             ),
           ],
