@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_kitchen/pages/recipe/recipe-page.dart';
-import 'package:my_kitchen/utils/star-rating.dart';
+import 'package:my_kitchen/widgets/star-rating.dart';
 import 'package:provider/provider.dart';
 import 'package:my_kitchen/pages/side-navigation/side-navigation.dart';
 import 'package:my_kitchen/services/theme/theme.dart';
 import 'package:my_kitchen/theme/themed-page.dart';
 
-class Dashboard extends StatelessWidget {
+class DashboardPage extends StatelessWidget {
   static String tag = '/dashboard';
 
   @override

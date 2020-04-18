@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:my_kitchen/utils/fadein.dart';
 import 'package:provider/provider.dart';
-import 'package:my_kitchen/pages/dashboard/dashboard.dart';
+import 'package:my_kitchen/pages/dashboard/dashboard-page.dart';
 import 'package:my_kitchen/services/auth/auth.dart';
 import 'package:my_kitchen/services/theme/theme.dart';
 import 'package:my_kitchen/theme/themed-page.dart';
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
               onSubmitAnimationCompleted: () {
                 Navigator.pushNamedAndRemoveUntil(
                   context,
-                  Dashboard.tag,
+                  DashboardPage.tag,
                   (Route<dynamic> route) => false,
                 );
               },
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       Navigator.pushNamedAndRemoveUntil(
                         context,
-                        Dashboard.tag,
+                        DashboardPage.tag,
                         (Route<dynamic> route) => false,
                       );
                     },

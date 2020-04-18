@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:my_kitchen/pages/dashboard/dashboard.dart';
-import 'package:my_kitchen/pages/login/login.dart';
+import 'package:my_kitchen/pages/dashboard/dashboard-page.dart';
+import 'package:my_kitchen/pages/login/login-page.dart';
 import 'package:my_kitchen/pages/recipe/recipe-page.dart';
 import 'package:my_kitchen/pages/shopping-list/my-shopping-list.dart';
 import 'package:my_kitchen/pages/shopping-list/shopping-lists.dart';
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
                       print("error");
                       return Text(snapshot.error.toString());
                     }
-                    return snapshot.hasData ? Dashboard() : LoginPage();
+                    return snapshot.hasData ? DashboardPage() : LoginPage();
                   }
                   return Center(
                     child: Container(
@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
             ),
         ShoppingListsPage.tag: (context) => ShoppingListsPage(),
         MyShoppingList.tag: (context) => MyShoppingList(),
-        Dashboard.tag: (context) => Dashboard(),
+        DashboardPage.tag: (context) => DashboardPage(),
         RecipePage.tag: (context) => RecipePage(),
         LoginPage.tag: (context) => LoginPage(),
       },

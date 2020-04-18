@@ -56,11 +56,14 @@ class _ShoppingListDialogState extends State<ShoppingListDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min, // To make the card compact
             children: <Widget>[
-              Text(
-                widget.title,
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.w700,
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  widget.title,
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
               SizedBox(height: 16.0),

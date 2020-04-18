@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:my_kitchen/pages/login/login.dart';
+import 'package:my_kitchen/pages/login/login-page.dart';
 import 'package:my_kitchen/pages/shopping-list/shopping-lists.dart';
 import 'package:my_kitchen/services/auth/auth.dart';
 import 'package:provider/provider.dart';
